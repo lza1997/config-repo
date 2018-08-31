@@ -1,0 +1,26 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+zuul:
+  #忽略所有服务敏感头（所有服务的cookie能传递）
+  sensitive-headers:
+  routes:
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+#      配置敏感头
+      sensitiveHeaders:
+#    简洁写法
+#    product: /myProduct/**
+  ignored-patterns:
+#    - /myProduct/product/list
+#    - /product/product/list
+    #简洁写法
+#    - /**/product/list
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
