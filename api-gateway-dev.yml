@@ -25,4 +25,4 @@ management:
       exposure:
         include: '*'
 server:
-  port: 8890
+  port: 9000
